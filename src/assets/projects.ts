@@ -8,7 +8,7 @@ export const projects = [
     ],
     description:
       "A Neovim-themed portfolio website showcasing my skills and projects.",
-    image: "/projects/portfolio.webp",
+    image: "/portfolio/projects/portfolio.webp",
     links: [
       {
         url: "https://github.com/ezerinz/ezerinz.github.io",
@@ -22,7 +22,7 @@ export const projects = [
     techs: ["devicon-flutter-plain colored", "devicon-realm-plain colored"],
     description:
       "Designed and developed a schedule planner app for tracking assignments and classes, using Riverpod for state management and Realm for local data storage.",
-    image: "/projects/skedul.webp",
+    image: "/portfolio/projects/skedul.webp",
     links: [
       {
         url: "https://github.com/ezerinz/skedul",
@@ -35,7 +35,7 @@ export const projects = [
     techs: ["devicon-flutter-plain colored"],
     description:
       "Developed the app's frontend by translating UI designs into responsive and seamless interfaces, and integrated RESTful APIs",
-    image: "/projects/mizora.webp",
+    image: "/portfolio/projects/mizora.webp",
     links: [
       {
         url: "https://play.google.com/store/apps/details?id=com.mizora.jewelry.privilege",
@@ -48,7 +48,7 @@ export const projects = [
     techs: ["devicon-flutter-plain colored"],
     description:
       "Sliced UI designs for specific features, implemented state management using GetX, and integrated Firebase Database.",
-    image: "/projects/posing-portal.webp",
+    image: "/portfolio/projects/posing-portal.webp",
     links: [
       {
         url: "https://play.google.com/store/apps/details?id=io.fand.posingportal",
