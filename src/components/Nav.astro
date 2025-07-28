@@ -1,0 +1,81 @@
+<nav class="navbar fixed-top navbar-expand-lg shadow-sm card mx-4 mt-2">
+  <div class="container-fluid">
+    <div class="d-flex">
+      <a href="/" class="navbar-brand name" style="margin-right: 11px;"
+        >Edwin's
+      </a>
+      <div class="navbar-brand">Projects</div>
+    </div>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item d-flex align-items-center">
+        <button
+          id="themeToggle"
+          class="btn"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <i id="theme-switcher-icon" class="bi bi-circle-half"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <script is:inline>
+    const toggleButton = document.getElementById("themeToggle");
+    const icon = document.getElementById("theme-switcher-icon");
+
+    const getStoredTheme = () => localStorage.getItem("theme");
+    const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
+
+    const applyTheme = (theme) => {
+      document.documentElement.setAttribute("data-bs-theme", theme);
+      icon.className =
+        theme === "dark" ? "bi bi-moon-stars-fill" : "bi bi-sun-fill";
+    };
+
+    // Initial theme
+    const preferred =
+      getStoredTheme() ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+    applyTheme(preferred);
+
+    toggleButton.addEventListener("click", () => {
+      const currentTheme =
+        document.documentElement.getAttribute("data-bs-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      setStoredTheme(newTheme);
+      applyTheme(newTheme);
+    });
+  </script>
+
+  <style>
+    .navbar {
+      background-color: rgba(var(--bs-body-bg), 0.65);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--bs-body-color);
+      border-bottom: 1px solid rgba(var(--bs-body-color-rgb), 0.1);
+    }
+    .navbar-brand {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus,
+    .navbar-toggler:active,
+    .navbar-toggler.collapsed,
+    .navbar-toggler:not(.collapsed) {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+</nav>

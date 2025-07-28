@@ -1,0 +1,22 @@
+---
+import { projects } from "../assets/projects.ts";
+import Card from "./Card.astro";
+---
+
+<div class="container mt-5 pt-5 px-5">
+  <div class="row pt-3">
+    {
+      projects.map((project) => (
+        <div class="col-12 col-md-6 mb-4">
+          <Card
+            title={project.name}
+            description={project.description}
+            image={project.image}
+            links={project.links ?? []}
+            techs={project.techs ?? []}
+          />
+        </div>
+      ))
+    }
+  </div>
+</div>

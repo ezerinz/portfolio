@@ -1,0 +1,37 @@
+---
+const { title, description = "", image, links, techs } = Astro.props;
+---
+
+<div class="card h-100 d-flex flex-column shadow-sm">
+  <img
+    src={image}
+    class="card-img-top"
+    style="height: 200px; object-fit: cover;"
+  />
+  <div class="card-body d-flex flex-column">
+		<h5 class="card-title">{title}<span>{
+			techs.map((icon: any) => 
+			<i class=`ms-2 ${icon}` />
+			)
+		}</span></h5>
+    <p class="card-text flex-grow-1">
+      {description}
+    </p>
+    <div class="d-flex">
+			{links.map((link: any) => 
+			<a href={link.url}><i class=`${link.icon} fs-3`/></a>
+			)}
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    height: 100%;
+  }
+
+	a {
+		color: unset;
+		text-decoration: unset;
+	}
+</style>
