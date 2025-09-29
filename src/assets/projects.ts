@@ -16,7 +16,6 @@ export const projects = [
       },
     ],
   },
-
   {
     name: "Skedul",
     techs: ["devicon-flutter-plain colored", "devicon-realm-plain colored"],
@@ -52,6 +51,19 @@ export const projects = [
     links: [
       {
         url: "https://play.google.com/store/apps/details?id=io.fand.posingportal",
+        icon: "fa fa-brands fa-google-play",
+      },
+    ],
+  },
+  {
+    name: "Mandar Heritage",
+    techs: ["devicon-flutter-plain colored"],
+    description:
+      "Designed and developed a tourism application for Majene Regency. Built the backend using Laravel, implemented REST APIs consumed by the Flutter mobile app via Dio, and managed state with Riverpod.",
+    image: "/portfolio/projects/mandar-heritage.webp",
+    links: [
+      {
+        url: "https://play.google.com/store/apps/details?id=com.unsulbar.mandar_heritage",
         icon: "fa fa-brands fa-google-play",
       },
     ],
