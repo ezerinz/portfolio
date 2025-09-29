@@ -57,7 +57,11 @@ export const projects = [
   },
   {
     name: "Mandar Heritage",
-    techs: ["devicon-flutter-plain colored"],
+    techs: [
+      "devicon-flutter-plain colored",
+      "devicon-laravel-plain colored",
+      "devicon-php-plain colored",
+    ],
     description:
       "Designed and developed a tourism application for Majene Regency. Built the backend using Laravel, implemented REST APIs consumed by the Flutter mobile app via Dio, and managed state with Riverpod.",
     image: "/portfolio/projects/mandar-heritage.webp",
