@@ -8,18 +8,7 @@ import Nav from "../components/Nav.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <!-- <meta name="generator" content={Astro.generator} /> -->
     <title>Edwin's Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -27,39 +16,30 @@ import Nav from "../components/Nav.astro";
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
     <style>
-      [data-bs-theme="light"] {
-        background-color: #e1e2e7;
-        --bs-body-bg: #e1e2e7;
-        color: #3760bf;
+      html {
+        background-color: oklch(1 0 0);
       }
 
-      [data-bs-theme="dark"] {
-        background-color: #1a1b26;
-        --bs-body-bg: #1a1b26;
-        color: #c0caf5;
-      }
-
-      * {
-        font-family: "Inter", sans-serif;
+      html.dark {
+        background-color: oklch(0.145 0 0);
       }
     </style>
   </head>
   <body>
     <Nav />
     <slot />
-    <script
-      is:inline
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-      crossorigin="anonymous"></script>
   </body>
 </html>
+
+<script is:inline>
+  const theme =
+    localStorage.theme ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+  }
+</script>

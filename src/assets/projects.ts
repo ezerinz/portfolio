@@ -30,27 +30,18 @@ export const projects = [
     ],
   },
   {
-    name: "Mizora Privilege",
-    techs: ["devicon-flutter-plain colored"],
-    description:
-      "Developed the app's frontend by translating UI designs into responsive and seamless interfaces, and integrated RESTful APIs",
-    image: "/portfolio/projects/mizora.webp",
-    links: [
-      {
-        url: "https://play.google.com/store/apps/details?id=com.mizora.jewelry.privilege",
-        icon: "fa fa-brands fa-google-play",
-      },
+    name: "Absensi UNSULBAR",
+    techs: [
+      "devicon-flutter-plain colored",
+      "devicon-laravel-plain colored",
+      "devicon-php-plain colored",
     ],
-  },
-  {
-    name: "The Posing Portal",
-    techs: ["devicon-flutter-plain colored"],
     description:
-      "Sliced UI designs for specific features, implemented state management using GetX, and integrated Firebase Database.",
-    image: "/portfolio/projects/posing-portal.webp",
+      "Designed and developed a mobile attendance system for UNSULBAR. Built the backend using Laravel with REST APIs consumed by a Flutter app, and implemented reliable state management for real-time attendance tracking.",
+    image: "/portfolio/projects/absensi-usb.webp",
     links: [
       {
-        url: "https://play.google.com/store/apps/details?id=io.fand.posingportal",
+        url: "https://play.google.com/store/apps/details?id=com.unsulbar.absensi",
         icon: "fa fa-brands fa-google-play",
       },
     ],

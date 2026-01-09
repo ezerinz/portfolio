@@ -1,37 +1,74 @@
 ---
-const { title, description = "", image, links, techs } = Astro.props;
+const { title, description = "", image, links = [], techs = [] } = Astro.props;
 ---
 
-<div class="card h-100 d-flex flex-column shadow-sm">
-  <img
-    src={image}
-    class="card-img-top"
-    style="height: 230px; object-fit: cover;"
-  />
-  <div class="card-body d-flex flex-column">
-		<h5 class="card-title">{title}<span>{
-			techs.map((icon: any) => 
-			<i class=`ms-2 ${icon}` />
-			)
-		}</span></h5>
-    <p class="card-text flex-grow-1">
-      {description}
-    </p>
-    <div class="d-flex">
-			{links.map((link: any) => 
-			<a href={link.url}><i class=`${link.icon} fs-3`/></a>
-			)}
+<div
+  class="group relative overflow-hidden rounded-xl
+         border border-gray-200/50 dark:border-gray-700/50
+         bg-white/70 dark:bg-gray-900/60
+         backdrop-blur-md backdrop-saturate-150
+         shadow-sm transition-all duration-300
+         hover:-translate-y-1 hover:shadow-lg"
+>
+  <div class="relative h-56 overflow-hidden">
+    <img
+      src={image}
+      alt={title}
+      class="h-full w-full object-cover
+             transition-transform duration-500
+             group-hover:scale-105"
+    />
+
+    <div
+      class="pointer-events-none absolute inset-0
+             bg-linear-to-t from-black/40 via-black/10 to-transparent"
+    >
     </div>
   </div>
+
+  <div class="flex flex-col gap-3 p-5">
+    <div class="flex flex-wrap items-center gap-2">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+        {title}
+      </h3>
+
+      {
+        techs.length > 0 && (
+          <div class="flex gap-2 text-sm text-gray-500 dark:text-gray-400">
+            {techs.map((icon: string) => (
+              <i class={`transition hover:scale-110 ${icon}`} />
+            ))}
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Description -->
+    <p
+      class="text-sm leading-relaxed
+             text-gray-600 dark:text-gray-400"
+    >
+      {description}
+    </p>
+
+    {
+      links.length > 0 && (
+        <div class="mt-auto flex gap-4 pt-2">
+          {links.map((link: any) => (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-gray-500 transition
+                   hover:text-gray-900 dark:hover:text-gray-100
+                   hover:scale-110 active:scale-95"
+              aria-label={link.label ?? "Project link"}
+            >
+              <i class={`text-xl ${link.icon}`} />
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
 </div>
-
-<style>
-  .card {
-    height: 100%;
-  }
-
-	a {
-		color: unset;
-		text-decoration: unset;
-	}
-</style>
